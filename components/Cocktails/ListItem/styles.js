@@ -12,6 +12,7 @@ const CocktailItemStyles = StyleSheet.create({
     cocktailName: {
         color: '#FFFFFF',
         fontSize: 18,
+        fontWeight: 600,
     },
     cocktailDescriptionContainer: {
         marginTop: 18

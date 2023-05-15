@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { Platform } from 'react-native';
 
 const CocktailListStyles = StyleSheet.create({
     container: {
         marginLeft: 81,
         marginRight: 81,
-        marginBottom: 100
+        marginBottom: Platform.OS === 'ios' ? 100 : 160 
     },
     cocktailsText: {
         color: '#0BC9D7',
