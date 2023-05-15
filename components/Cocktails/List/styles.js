@@ -3,7 +3,8 @@ import { StyleSheet } from 'react-native';
 const CocktailListStyles = StyleSheet.create({
     container: {
         marginLeft: 81,
-        marginRight: 81
+        marginRight: 81,
+        marginBottom: 100
     },
     cocktailsText: {
         color: '#0BC9D7',
