@@ -18,6 +18,11 @@ const HeaderStyles = StyleSheet.create({
     searchIcon: {
         height: 26,
         width: 26,
+    },
+    closeMenuIcon: {
+        zIndex: 0,
+        height: 50,
+        width: 50
     }
 })
 

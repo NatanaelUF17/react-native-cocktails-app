@@ -1,21 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import Header from './components/common/Header/Header';
-import CocktailList from './components/Cocktails/List/CocktailList';
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+import 'react-native-reanimated';
+import { NavigationContainer } from '@react-navigation/native';
+import DrawerMenu from './common/navigation/DrawerMenu';
+import { StyleSheet, View } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Header />
-      <CocktailList />
-      <StatusBar style='light' />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <NavigationContainer>
+        <DrawerMenu />
+      </NavigationContainer>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
   },
 });
