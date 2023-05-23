@@ -9,12 +9,16 @@ const CocktailListStyles = StyleSheet.create({
     },
     cocktailsText: {
         color: '#0BC9D7',
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: 'Raleway-SemiBold',
+        fontWeight: '600'
     },
     cocktailsAlcoholTypeText: {
         color: '#FFFFFF',
         fontWeight: 'bold',
-        fontSize: 24
+        fontSize: 24,
+        fontFamily: 'Raleway-Bold',
+        fontWeight: '700'
     },
     cocktailsList: {
         marginTop: 30

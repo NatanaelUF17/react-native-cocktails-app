@@ -2,31 +2,90 @@ import 'react-native-gesture-handler';
 import 'react-native-reanimated';
 import { DrawerContentComponentProps, DrawerContentScrollView, DrawerItem, DrawerItemList, createDrawerNavigator } from '@react-navigation/drawer';
 import Home from '../Home';
-import Header from '../../components/common/Header/Header';
-import { Image } from 'react-native';
-import { WithAlcoholIcon } from '../../assets/icons';
+import Header from '../../components/common/header/Header';
+import { Text } from 'react-native';
+import DrawerMenuIcon from './DrawerMenuIcon';
+import { useState } from 'react';
+import DrawerLabelOption from './DrawerLabelOption';
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerMenu() {
+    const [isFocused, setIsFocused] = useState(false);
+
     return (
         <Drawer.Navigator
             useLegacyImplementation
             drawerContent={(props: DrawerContentComponentProps) => <CustomDrawerContent {...props} />}
             screenOptions={{
-                header: ({ navigation, route, options }) => <Header navigation={navigation} style={options.headerStyle} />,
                 headerStyle: {
                     backgroundColor: 'black'
-                }
+                },
+                header: ({ navigation, route, options }) =>
+                    <Header
+                        navigation={navigation}
+                        style={options.headerStyle}
+                    />,
             }}
         >
             <Drawer.Screen
                 name='Home'
                 component={Home}
                 options={{
-                    drawerLabel: 'Cocktails with alcohol',
-                    drawerActiveTintColor: 'black',
-                    drawerIcon: ({ focused, color, size }) => <Image source={WithAlcoholIcon} />
+                    drawerLabel: ({ focused, color }) =>
+                        <DrawerLabelOption
+                            text='Cocktails with alcohol'
+                            color={color}
+                            focused={focused}
+                        />,
+                    drawerActiveTintColor: '#0BC9D7',
+                    drawerIcon: ({ focused, color, size }) =>
+                        <DrawerMenuIcon
+                            name='Cocktails with alcohol'
+                            focused={focused}
+                            color={color}
+                            size={size}
+                        />
+                }}
+            />
+            <Drawer.Screen
+                name='Test1'
+                component={Test1}
+                options={{
+                    drawerLabel: ({ focused, color }) =>
+                        <DrawerLabelOption
+                            text='Non-alcoholic cocktails'
+                            color={color}
+                            focused={focused}
+                        />,
+                    drawerActiveTintColor: '#0BC9D7',
+                    drawerIcon: ({ focused, color, size }) =>
+                        <DrawerMenuIcon
+                            name='Non-alcoholic cocktails'
+                            focused={focused}
+                            color={color}
+                            size={size}
+                        />
+                }}
+            />
+            <Drawer.Screen
+                name='Test2'
+                component={Test2}
+                options={{
+                    drawerLabel: ({ focused, color }) =>
+                        <DrawerLabelOption
+                            text='Favorites cocktails'
+                            color={color}
+                            focused={focused}
+                        />,
+                    drawerActiveTintColor: '#0BC9D7',
+                    drawerIcon: ({ focused, color, size }) =>
+                        <DrawerMenuIcon
+                            name='Favorites cocktails'
+                            focused={focused}
+                            color={color}
+                            size={size}
+                        />
                 }}
             />
         </Drawer.Navigator>
@@ -42,4 +101,15 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             </DrawerItemList>
         </DrawerContentScrollView>
     )
+}
+
+function Test1() {
+    return (
+        <Text style={{ textAlign: 'center' }}>Hello from Non-alcoholic cocktails</Text>
+    );
+}
+function Test2() {
+    return (
+        <Text style={{ textAlign: 'center' }}>Hello from favorites cocktails</Text>
+    );
 }

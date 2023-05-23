@@ -11,7 +11,11 @@ export default function CocktailItem({ cocktail }: Props) {
         <View>
             <View style={CocktailItemStyles.cocktailImageContainer}>
                 <Image
-                    style={CocktailItemStyles.cocktailImage}
+                    style={{
+                        width: 124,
+                        height: 184,
+                        resizeMode: 'contain',
+                    }}
                     source={cocktail.image} />
             </View>
             <View style={CocktailItemStyles.cocktailDescriptionContainer}>
@@ -26,7 +30,12 @@ export default function CocktailItem({ cocktail }: Props) {
                 <View style={CocktailItemStyles.cocktailDetailsContainer}>
                     <TouchableOpacity>
                         <Image
-                            style={CocktailItemStyles.cocktailFavIcon}
+                            style={{
+                                width: 17,
+                                height: 20,
+                                resizeMode: 'contain',
+                                marginRight: 8
+                            }}
                             source={AddFavoriteIcon} />
                     </TouchableOpacity>
                     <Text style={CocktailItemStyles.cocktailDetailText}>See details</Text>

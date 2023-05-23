@@ -1,5 +1,5 @@
 import { StyleSheet, SafeAreaView, View } from 'react-native';
-import Header from '../components/common/Header/Header';
+import Header from '../components/common/header/Header';
 import CocktailList from '../components/Cocktails/List/CocktailList';
 import { StatusBar } from 'expo-status-bar';
 

@@ -1,7 +1,7 @@
 import { DrawerNavigationProp, useDrawerStatus } from '@react-navigation/drawer';
 import { View, Image, TouchableOpacity, SafeAreaView } from "react-native";
 import { MenuIcon, SearchIcon, CloseMenuIcon } from "../../../assets/icons";
-import HeaderStyles from "./styles";
+import HeaderStyles from './styles';
 import type { ParamListBase } from '@react-navigation/native';
 
 interface Props {

@@ -1,6 +1,6 @@
 import { View, FlatList, Text } from "react-native";
 import CocktailListStyles from "./styles";
-import cocktails from "../../../common/cocktails";
+import cocktails from "../../../data/cocktails";
 import CocktailItem from "../ListItem/CocktailItem";
 
 export default function CocktailList() {

@@ -1,16 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 const CocktailItemStyles = StyleSheet.create({
-    cocktailImage: {
-        width: 124,
-        height: 184,
-        resizeMode: 'contain',
-    },
     cocktailImageContainer: {
         alignItems: 'center'
     },
     cocktailName: {
         color: '#FFFFFF',
+        fontFamily: 'Raleway-Bold',
         fontSize: 18,
         fontWeight: 600,
     },
@@ -21,7 +17,9 @@ const CocktailItemStyles = StyleSheet.create({
         marginTop: 11,
         color: '#FFFFFF',
         fontSize: 12,
-        width: 224
+        width: 224,
+        fontWeight: '400',
+        fontFamily: 'Raleway'
     },
     cocktailFooterContainer: {
         marginTop: 4,
@@ -32,11 +30,14 @@ const CocktailItemStyles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 12,
+        fontWeight: '700',
+        fontFamily: 'Raleway-Bold'
     },
     cocktailPrice: {
         color: 'white',
-        fontWeight: 'bold',
+        fontWeight: '700',
         fontSize: 24,
+        fontFamily: 'Raleway-Bold'
     },
     cocktailPriceContainer: {
         marginVertical: 8
@@ -48,13 +49,9 @@ const CocktailItemStyles = StyleSheet.create({
     cocktailDetailText: {
         color: 'white',
         fontSize: 12,
+        fontWeight: '600',
+        fontFamily: 'Raleway-SemiBold'
     },
-    cocktailFavIcon: {
-        width: 17,
-        height: 20,
-        resizeMode: 'contain',
-        marginRight: 8
-    }
 });
 
 export default CocktailItemStyles;
