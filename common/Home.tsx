@@ -1,6 +1,6 @@
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import Header from '../components/common/header/Header';
-import CocktailList from '../components/Cocktails/List/CocktailList';
+import CocktailList from '../components/cocktails/list/CocktailList';
 import { StatusBar } from 'expo-status-bar';
 
 export default function Home() {

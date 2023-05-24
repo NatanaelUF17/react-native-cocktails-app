@@ -1,12 +1,11 @@
 import 'react-native-gesture-handler';
 import 'react-native-reanimated';
 import { DrawerContentComponentProps, DrawerContentScrollView, DrawerItem, DrawerItemList, createDrawerNavigator } from '@react-navigation/drawer';
-import Home from '../Home';
-import Header from '../../components/common/header/Header';
+import Header from '../../../components/common/header/Header';
 import { Text, View } from 'react-native';
 import DrawerMenuIcon from './DrawerMenuIcon';
 import DrawerLabelOption from './DrawerLabelOption';
-import CocktailDetail from '../../components/Cocktails/Detail/CocktailDetail';
+import StackNavigator from '../stack/StackNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -28,7 +27,7 @@ export default function DrawerMenu() {
         >
             <Drawer.Screen
                 name='Home'
-                component={Home}
+                component={StackNavigator}
                 options={{
                     drawerLabel: ({ focused, color }) =>
                         <DrawerLabelOption

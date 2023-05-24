@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import 'react-native-reanimated';
 import { NavigationContainer } from '@react-navigation/native';
-import DrawerMenu from './common/navigation/DrawerMenu';
+import DrawerMenu from './common/navigation/drawer/DrawerMenu';
 import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -26,7 +26,7 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <NavigationContainer>
+      <NavigationContainer ref={(navigator) => { navigator }}>
         <DrawerMenu />
       </NavigationContainer>
     </View>
