@@ -3,16 +3,14 @@ import 'react-native-reanimated';
 import { DrawerContentComponentProps, DrawerContentScrollView, DrawerItem, DrawerItemList, createDrawerNavigator } from '@react-navigation/drawer';
 import Home from '../Home';
 import Header from '../../components/common/header/Header';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import DrawerMenuIcon from './DrawerMenuIcon';
-import { useState } from 'react';
 import DrawerLabelOption from './DrawerLabelOption';
+import CocktailDetail from '../../components/Cocktails/Detail/CocktailDetail';
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerMenu() {
-    const [isFocused, setIsFocused] = useState(false);
-
     return (
         <Drawer.Navigator
             useLegacyImplementation
@@ -99,7 +97,10 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
                 <DrawerItem label='Close drawer' onPress={() => props.navigation.closeDrawer()} />
                 <DrawerItem label='Toggle drawer' onPress={() => props.navigation.toggleDrawer()} />
             </DrawerItemList>
-        </DrawerContentScrollView>
+            <View style={{ height: 700, marginLeft: 31, alignItems: 'flex-start', justifyContent: 'flex-end' }}>
+                <Text style={{ fontFamily: 'Raleway' }}>Version 1.0</Text>
+            </View>
+        </DrawerContentScrollView >
     )
 }
 

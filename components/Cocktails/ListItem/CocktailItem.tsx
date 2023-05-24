@@ -1,22 +1,26 @@
-import { Text, Image, View, TouchableOpacity } from "react-native";
+import { Text, Image, View, TouchableOpacity, Alert } from "react-native";
 import CocktailItemStyles from "./styles";
 import { AddFavoriteIcon } from "../../../assets/icons";
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
-    cocktail: any
+    cocktail: any;
 }
 
 export default function CocktailItem({ cocktail }: Props) {
+    const navigation = useNavigation();
     return (
         <View>
             <View style={CocktailItemStyles.cocktailImageContainer}>
-                <Image
-                    style={{
-                        width: 124,
-                        height: 184,
-                        resizeMode: 'contain',
-                    }}
-                    source={cocktail.image} />
+                <TouchableOpacity>
+                    <Image
+                        style={{
+                            width: 124,
+                            height: 184,
+                            resizeMode: 'contain',
+                        }}
+                        source={cocktail.image} />
+                </TouchableOpacity>
             </View>
             <View style={CocktailItemStyles.cocktailDescriptionContainer}>
                 <Text style={CocktailItemStyles.cocktailName}>{cocktail.name}</Text>
@@ -38,7 +42,9 @@ export default function CocktailItem({ cocktail }: Props) {
                             }}
                             source={AddFavoriteIcon} />
                     </TouchableOpacity>
-                    <Text style={CocktailItemStyles.cocktailDetailText}>See details</Text>
+                    <TouchableOpacity onPress={() => Alert.alert(cocktail.name)}>
+                        <Text style={CocktailItemStyles.cocktailDetailText}>See details</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
