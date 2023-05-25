@@ -26,7 +26,7 @@ export default function DrawerMenu() {
             }}
         >
             <Drawer.Screen
-                name='Home'
+                name='StackNavigator'
                 component={StackNavigator}
                 options={{
                     drawerLabel: ({ focused, color }) =>

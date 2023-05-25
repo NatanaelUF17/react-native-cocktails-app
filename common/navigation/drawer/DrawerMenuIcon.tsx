@@ -1,5 +1,5 @@
 import { Image, ImageSourcePropType } from 'react-native';
-import { WithAlcoholIcon, NonAlcohol, FavoritesCocktails } from '../../assets/icons';
+import { WithAlcoholIcon, NonAlcohol, FavoritesCocktails } from '../../../assets/icons';
 
 interface Props {
     name: string;

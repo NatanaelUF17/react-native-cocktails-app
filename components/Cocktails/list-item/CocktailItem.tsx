@@ -1,16 +1,19 @@
 import { Text, Image, View, TouchableOpacity, Alert } from "react-native";
 import CocktailItemStyles from "./styles";
 import { AddFavoriteIcon } from "../../../assets/icons";
+import { useNavigation } from '@react-navigation/native';
 
 interface Props {
     cocktail: any;
 }
 
 export default function CocktailItem({ cocktail }: Props) {
+    const navigation = useNavigation();
+
     return (
         <View>
             <View style={CocktailItemStyles.cocktailImageContainer}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('CocktailDetail' as never)}>
                     <Image
                         style={{
                             width: 124,
