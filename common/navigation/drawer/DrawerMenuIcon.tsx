@@ -13,13 +13,10 @@ export default function DrawerMenuIcon({ name, focused, color, size }: Props) {
         switch (name.toLowerCase()) {
             case "cocktails with alcohol":
                 return WithAlcoholIcon;
-                break;
             case "non-alcoholic cocktails":
                 return NonAlcohol;
-                break;
             case "favorites cocktails":
                 return FavoritesCocktails;
-                break;
             default:
                 return 0;
         }

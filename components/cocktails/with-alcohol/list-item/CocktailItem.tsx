@@ -1,6 +1,6 @@
 import { Text, Image, View, TouchableOpacity, Alert } from "react-native";
 import CocktailItemStyles from "./styles";
-import { AddFavoriteIcon } from "../../../assets/icons";
+import { AddFavoriteIcon } from "../../../../assets/icons";
 import { useNavigation } from '@react-navigation/native';
 
 interface Props {

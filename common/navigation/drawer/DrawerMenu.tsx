@@ -5,7 +5,9 @@ import Header from '../../../components/common/header/Header';
 import { Text, View } from 'react-native';
 import DrawerMenuIcon from './DrawerMenuIcon';
 import DrawerLabelOption from './DrawerLabelOption';
-import StackNavigator from '../stack/StackNavigator';
+import NonAlcoholCocktailList from '../../../components/cocktails/non-alcohol/list/NonAlcoholCocktailList';
+import FavoriteCocktailsList from '../../../components/cocktails/favorites/list/FavoriteCocktailsList';
+import Home from '../../Home';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,8 +28,8 @@ export default function DrawerMenu() {
             }}
         >
             <Drawer.Screen
-                name='StackNavigator'
-                component={StackNavigator}
+                name='CocktailsWithAlcohol'
+                component={Home}
                 options={{
                     drawerLabel: ({ focused, color }) =>
                         <DrawerLabelOption
@@ -46,8 +48,8 @@ export default function DrawerMenu() {
                 }}
             />
             <Drawer.Screen
-                name='Test1'
-                component={Test1}
+                name='NonAlcoholicCocktails'
+                component={NonAlcoholCocktailList}
                 options={{
                     drawerLabel: ({ focused, color }) =>
                         <DrawerLabelOption
@@ -66,8 +68,8 @@ export default function DrawerMenu() {
                 }}
             />
             <Drawer.Screen
-                name='Test2'
-                component={Test2}
+                name='FavoriteCocktails'
+                component={FavoriteCocktailsList}
                 options={{
                     drawerLabel: ({ focused, color }) =>
                         <DrawerLabelOption
@@ -101,15 +103,4 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
             </View>
         </DrawerContentScrollView >
     )
-}
-
-function Test1() {
-    return (
-        <Text style={{ textAlign: 'center' }}>Hello from Non-alcoholic cocktails</Text>
-    );
-}
-function Test2() {
-    return (
-        <Text style={{ textAlign: 'center' }}>Hello from favorites cocktails</Text>
-    );
 }
